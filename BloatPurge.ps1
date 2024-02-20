@@ -1,3 +1,6 @@
+#no errors throughout
+$ErrorActionPreference = 'silentlycontinue'
+
 @(
 "Microsoft.BingWeather"
 "Microsoft.GetHelp"
@@ -167,5 +170,8 @@ $CloudStore = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore'
 If (Test-Path $CloudStore) {
     Stop-Process Explorer.exe -Force
     Remove-Item $CloudStore -Recurse -Force
-    Start-Process Explorer.exe -Wait
 }
+
+$regPath = "HKLM:\SOFTWARE\FSLogix\profiles"
+New-ItemProperty -Path $regPath -Name Enabled -PropertyType DWORD -Value 1 -Force
+New-ItemProperty -Path $regPath -Name VHDLocations -PropertyType MultiString -Value \\d250vdiprofiles.file.core.windows.net\roaming-profiles
