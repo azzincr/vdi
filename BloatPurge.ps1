@@ -2,6 +2,7 @@
 $ErrorActionPreference = 'silentlycontinue'
 
 @(
+"Microsoft.549981C3F5F10"
 "Microsoft.BingWeather"
 "Microsoft.GetHelp"
 "Microsoft.Getstarted"
@@ -48,6 +49,7 @@ $Search = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
 If (Test-Path $Search) {
     Set-ItemProperty $Search AllowCortana -Value 0 
 }
+
 
 #Disables Web Search in Start Menu
 Write-Output "Disabling Bing Search in Start Menu"
