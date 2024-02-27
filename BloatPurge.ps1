@@ -58,7 +58,7 @@ $HKCUSearch = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search"
 Set-ItemProperty $HKCUSearch BingSearchEnabled -Value 0 
 
 Write-Output "Disabling Search in TaskBar"
-Set-ItemProperty $HKCUSearch SearchTaskbarmode -Value 0 
+Set-ItemProperty $HKCUSearch SearchboxTaskbarMode -Value 0 
 
 #Stops the Windows Feedback Experience from sending anonymous data
 Write-Output "Stopping the Windows Feedback Experience program"
