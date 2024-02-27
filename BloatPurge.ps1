@@ -166,9 +166,9 @@ Write-Output "Stopping and disabling Diagnostics Tracking Service"
 Stop-Service "DiagTrack"
 Set-Service "DiagTrack" -StartupType Disabled
 
-Write-Output "Removing CloudStore from registry if it exists"
-$CloudStore = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore'
-If (Test-Path $CloudStore) {
-    Stop-Process Explorer.exe -Force
-    Remove-Item $CloudStore -Recurse -Force
+Write-Output "Removing News on taskbar"
+$NewsFeedLoc = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds'
+If (!(Test-Path $NewsFeedLoc)) {
+    New-Item $NewsFeedLoc
 }
+Set-ItemProperty $NewsFeedLoc EnableFeeds -Value 0
