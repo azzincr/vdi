@@ -45,21 +45,21 @@ If (Test-Path $Advertising) {
         
 #Stops Cortana from being used as part of your Windows Search Function
 Write-Output "Stopping Cortana from being used as part of your Windows Search Function"
-$Search = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
-If (Test-Path $Search) {
-    Set-ItemProperty $Search AllowCortana -Value 0 
+$SearchLoc = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search'
+If (!(Test-Path $SearchLoc)) {
+    New-Item $SearchLoc
 }
 
+Set-ItemProperty $SearchLoc AllowCortana -Value 0 
+Set-ItemProperty $SearchLoc DisableWebSearch -Value 1
 
-#Disables Web Search in Start Menu
 Write-Output "Disabling Bing Search in Start Menu"
-$WebSearch = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" BingSearchEnabled -Value 0 
-If (!(Test-Path $WebSearch)) {
-    New-Item $WebSearch
-}
-Set-ItemProperty $WebSearch DisableWebSearch -Value 1 
-        
+$HKCUSearch = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search"
+Set-ItemProperty $HKCUSearch BingSearchEnabled -Value 0 
+
+Write-Output "Disabling Search in TaskBar"
+Set-ItemProperty $HKCUSearch SearchTaskbarmode -Value 0 
+
 #Stops the Windows Feedback Experience from sending anonymous data
 Write-Output "Stopping the Windows Feedback Experience program"
 $Period = "HKCU:\Software\Microsoft\Siuf\Rules"
