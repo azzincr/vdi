@@ -166,14 +166,9 @@ Write-Output "Stopping and disabling Diagnostics Tracking Service"
 Stop-Service "DiagTrack"
 Set-Service "DiagTrack" -StartupType Disabled
 
-
 Write-Output "Removing CloudStore from registry if it exists"
 $CloudStore = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore'
 If (Test-Path $CloudStore) {
     Stop-Process Explorer.exe -Force
     Remove-Item $CloudStore -Recurse -Force
 }
-
-$regPath = "HKLM:\SOFTWARE\FSLogix\profiles"
-New-ItemProperty -Path $regPath -Name Enabled -PropertyType DWORD -Value 1 -Force
-New-ItemProperty -Path $regPath -Name VHDLocations -PropertyType MultiString -Value \\d250vdiprofiles.file.core.windows.net\roaming-profiles
