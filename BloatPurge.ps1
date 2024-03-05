@@ -36,6 +36,10 @@ $ErrorActionPreference = 'silentlycontinue'
   Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $_ | Remove-AppxProvisionedPackage -Online
 }
 
+Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-appxpackage
+Get-AppxPackage "Microsoft.Office.Onenote" | Remove-appxpackage
+Get-AppxPackage "Microsoft.DesktopAppInstaller" | Remove-appxpackage
+
 #Disables Windows Feedback Experience
 Write-Output "Disabling Windows Feedback Experience program"
 $Advertising = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo"
