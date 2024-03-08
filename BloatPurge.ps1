@@ -4,12 +4,15 @@ $ErrorActionPreference = 'silentlycontinue'
 @(
 "Microsoft.549981C3F5F10"
 "Microsoft.BingWeather"
+"Microsoft.DesktopAppInstaller" 
 "Microsoft.GetHelp"
 "Microsoft.Getstarted"
 "Microsoft.Microsoft3DViewer"
+"Microsoft.MicrosoftOfficeHub"
 "Microsoft.MicrosoftSolitaireCollection"
 "Microsoft.MicrosoftStickyNotes"
 "Microsoft.MixedReality.Portal"
+"Microsoft.Office.Onenote"
 "Microsoft.People"
 "Microsoft.ScreenSketch"
 "Microsoft.SkypeApp"
@@ -35,10 +38,6 @@ $ErrorActionPreference = 'silentlycontinue'
   Get-AppxPackage -Name $_| Remove-AppxPackage
   Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $_ | Remove-AppxProvisionedPackage -Online
 }
-
-Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-appxpackage
-Get-AppxPackage "Microsoft.Office.Onenote" | Remove-appxpackage
-Get-AppxPackage "Microsoft.DesktopAppInstaller" | Remove-appxpackage
 
 #Disables Windows Feedback Experience
 Write-Output "Disabling Windows Feedback Experience program"
