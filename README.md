@@ -69,7 +69,7 @@ See the [AZZ Engineering Guide — Git Workflow](https://github.com/azzincr/AZZ-
 
 ## Deployment
 
-Script is executed automatically during VDI provisioning via Terraform. Terraform invokes the script directly from its hosted URL as part of the provisioning pipeline, running with Administrator privileges on the target machine.
+Script is executed automatically during VDI provisioning via Terraform using the Azure VM Custom Script Extension. Terraform fetches BloatPurge.ps1 directly from this repository and executes it with Administrator privileges on the target machine during provisioning.
 
 ### Environments
 
