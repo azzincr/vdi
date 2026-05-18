@@ -1,4 +1,4 @@
-# vdi
+# BloatPurge.ps1
 
 A PowerShell script for removing pre-installed Windows bloatware, disabling telemetry, and cleaning up unnecessary features on Windows 10/11 machines.
 
