@@ -69,7 +69,7 @@ See the [AZZ Engineering Guide — Git Workflow](https://github.com/azzincr/AZZ-
 
 ## Deployment
 
-Script is ran when creating new VDIs via Terraform. Execute directly on target machines with Administrator privileges.
+Script is executed automatically during VDI provisioning via Terraform. Terraform invokes the script directly from its hosted URL as part of the provisioning pipeline, running with Administrator privileges on the target machine.
 
 ### Environments
 
