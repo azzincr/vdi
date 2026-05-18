@@ -69,7 +69,7 @@ See the [AZZ Engineering Guide — Git Workflow](https://github.com/azzincr/AZZ-
 
 ## Deployment
 
-Script is run manually or distributed via GPO/logon script. No CI/CD pipeline. Execute directly on target machines with Administrator privileges.
+Script is run manually. Execute directly on target machines with Administrator privileges.
 
 ### Environments
 
