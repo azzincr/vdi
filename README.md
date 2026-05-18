@@ -54,8 +54,6 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\BloatPurge.ps1
 ```
 
-Or deploy via RMM (e.g., Action1) as a script job with SYSTEM-level privileges.
-
 ---
 
 ## Notes
