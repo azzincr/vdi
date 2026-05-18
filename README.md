@@ -6,8 +6,6 @@ A PowerShell script for removing pre-installed Windows bloatware, disabling tele
 
 **Tier 4 — Standard**
 
-See the [AZZ Engineering Guide — Application Tiers](https://github.com/azzincr/AZZ-Engineering-Guide/blob/main/chapters/02-application-tiers.md) for tier definitions and requirements.
-
 ## Ownership
 
 | Role | Name / Team |
