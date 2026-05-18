@@ -69,7 +69,7 @@ See the [AZZ Engineering Guide — Git Workflow](https://github.com/azzincr/AZZ-
 
 ## Deployment
 
-Script is run manually. Execute directly on target machines with Administrator privileges.
+Script is ran when creating new VDIs via Terraform. Execute directly on target machines with Administrator privileges.
 
 ### Environments
 
